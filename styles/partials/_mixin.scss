@@ -1,0 +1,35 @@
+@mixin mobile {
+    @media (min-width: 0) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+@mixin media($keys...) {
+    @each $key in $keys {
+      @if ($key == phone) {
+        @include mobile {
+          @content
+        }
+      } @else if ($key == tablet) {
+        @include tablet {
+          @content
+        }
+      } @else if ($key == desktop) {
+        @include desktop {
+          @content
+        }
+      }
+    }
+}
+

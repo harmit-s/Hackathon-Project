@@ -1,0 +1,291 @@
+@use './partials/mixin' as *;
+@import url("./partials/_global.scss");
+
+
+.header {
+    background: #f5f3e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+
+    &__logo {
+        width: 14rem;
+        margin-left: 2rem;
+
+    }
+
+    &__logo-title {
+        color: #74d9ce;
+        font-size: 1.6rem;
+        text-decoration: none;
+        width: 77%;
+        position: absolute;
+        top: 6.5rem;
+        left: 51%;
+        transform: translateX(-50%);
+        @include tablet {
+            width:auto;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item,
+    &__item a {
+        color: black;
+        font-size: 1rem;
+        font-family: '';
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            color: #3e042d;
+            border-bottom: 3px solid black;
+            padding-bottom: 1.25rem;
+        }
+
+        &--current, &--current > a {
+            padding-bottom: 1.25rem;
+            border-bottom: 3px solid black;
+            font-weight: bold;
+            color: black;
+            font-size: .875rem;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                color: #3e042d;
+                border-bottom: 4px solid black;
+                padding-bottom: 1.25rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.hero {
+    text-align: center;
+    background: #f5f3e7;
+    border-top: 1.25rem solid #3e042d;
+    border-bottom: 1.25rem solid #3e042d;
+
+    &__title {
+        margin-top: .5rem;
+        margin-bottom: 0;
+        padding-bottom: .25rem;
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-bottom: .5rem;
+        font-size: .8rem;
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+}
+
+.poison {
+    background: #f5f3e7;
+    height: 4rem;
+    overflow: visible;
+    .form {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        //gap: .4rem;
+        //padding-left: 10rem;
+        @include tablet {
+            flex-direction: row;
+            gap: 2rem;
+            justify-content:center;
+            align-items: baseline;
+            padding-top: 1rem;
+        }
+        & input[type=search] {
+            background-color: rgb(216, 241, 241);
+            padding: 0.5rem;
+            margin-bottom: 1px;
+            width: 20rem;
+            text-align: center;
+            font-size: large;
+            }
+        & input[type=search]::placeholder {
+            color: black;
+            text-align: center;
+        }
+        .search-bar {
+            &__autocomplete {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            &__btn {
+                width: 100%;
+                border: unset;
+                border-bottom: solid 1px white;
+                background-color: #f3bf7b;
+                padding: 0.5rem;
+                font-size: large;
+                position:relative;
+                z-index: 12;
+                &:hover {
+                    cursor: pointer;
+                    background-color: #3e042d;
+                    color: #f3bf7b;
+                }
+            }
+        }
+        &__button {
+            background-color: aquamarine;
+            padding: 0.5rem;
+            min-width: 10rem;
+            color: rgb(124, 77, 77);
+            border: dotted 1px aquamarine;
+            border-radius: 4px;
+            font-size: large;
+            &:hover {
+                cursor: pointer;
+            }
+            @include tablet {
+                margin-top: 1rem;
+            }
+        }
+        &__submit {
+            width: 10rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.main {
+    background: #f5f3e7;
+    padding-bottom: 1rem;
+    &__title {
+        text-align: center;
+        margin: 0;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        letter-spacing: .625rem;
+        font-weight: bold;
+        animation-name: banner-animation;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes banner-animation {
+        0% {color:#3e042d;}
+        25% {color: #74d9ce;}
+        50% {color: #af6a33;}
+        75% {color: #909090;}
+        100% {color: #3e042d;}
+    }
+
+    &__drinks {
+        position: relative;
+        z-index: 0;
+    }
+
+    &__layout {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-around;
+        margin-top: 5.4rem;
+    }
+
+    &__layout-two {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-around;
+    }
+
+    &__liquor {
+        width: 11rem;
+        padding: 0 .5rem;
+        height: 12.5rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease;
+    }
+
+    &__liquor:hover {
+        opacity: 50%;
+        border: 3px solid #FFF;
+    }
+
+    &__header {
+        position: absolute;
+        bottom: 0px;
+        right: 5px;
+        color: #FFF;
+        font-size: 1.35rem;
+        color:#3e042d;
+        margin-bottom: 0;
+    }
+}
+
+    
+.footer{
+    background: #3e042d;
+    border-top: 4px solid red;
+    padding-left: 1rem;
+    &__container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 1.5rem;
+      @include tablet {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+  
+    &__title{
+      color:#f5f3e7;
+      padding-top: 1.5rem;
+      font-size: 1.35rem;
+      margin: 0;
+    }
+  
+    &__subheader{
+      color:#DB7A4E;
+      font-size: .6rem;
+      margin-top: 1.9rem;
+    }
+  
+    &__hours-layout{
+      display: flex;
+      gap:2.5rem;
+    }
+  
+    &__socials-layout{
+      display: flex;
+      gap:2rem;
+    }
+  
+    &__icon{
+      height: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    &__desc {
+        color: #FFF;
+        font-weight: 600;
+    }
+  }
